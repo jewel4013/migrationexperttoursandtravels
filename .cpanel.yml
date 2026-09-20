@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/migrati2/public_html/
-    - /bin/rsync -av --exclude='.git' --exclude='.cpanel.yml' ./ $DEPLOYPATH
+    - /bin/cp -a . $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH.git $DEPLOYPATH.cpanel.yml
+    - /bin/chmod 755 $DEPLOYPATH
